@@ -1,1 +1,16 @@
-<p>habit-list works!</p>
+<h3>Habit List</h3>
+<ul>
+  <li *ngFor="let habit of habits; let i = index">
+    <strong>{{ habit.habitName }}</strong
+    >: {{ habit.habitDescription }}
+    <button (click)="onEdit(i)">Edit</button>
+    <button (click)="onComplete(i)">Completed</button>
+  </li>
+</ul>
+<h3>Habit Completed List</h3>
+<ul>
+  <li *ngFor="let habit of completedList; let i = index">
+    <strong>{{ habit.habitName }}</strong
+    >: {{ habit.habitDescription }}
+  </li>
+</ul>

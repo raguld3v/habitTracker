@@ -1,1 +1,24 @@
-<p>habit-form works!</p>
+<h3>Add Habits</h3>
+<form class="ra-habit-form" [formGroup]="habitForm" (ngSubmit)="onSubmit()">
+  <label for="habit-name">Habit Name</label>
+  <input
+    type="text"
+    id="habit-name"
+    placeholder="enter habit name"
+    formControlName="habitName"
+  />
+  <label for="habit-description">Habit Description</label>
+  <textarea
+    name="Description"
+    id="habit-description"
+    cols="30"
+    rows="10"
+    placeholder="enter your habit description"
+    formControlName="habitDescription"
+  ></textarea>
+  <button type="submit">Submit</button>
+</form>
+<app-habit-list
+  [habits]="habitData"
+  (editHabit)="onEditHabit($event)"
+></app-habit-list>
